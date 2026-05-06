@@ -107,10 +107,11 @@
 
 | 항목 | 내용 |
 |------|------|
-| LLM 모델 | Upstage document-digitization-vision |
-| 입력 | Base64 인코딩된 이미지 |
-| 출력 | 구조화 JSON (아래 스키마 참조) |
-| 오케스트레이션 | LangChain Chain + OutputParser |
+| OCR 모델 | Upstage Document Digitization API (`model=ocr`) |
+| API 엔드포인트 | `POST https://api.upstage.ai/v1/document-digitization` |
+| 입력 | multipart/form-data (파일 바이너리 직접 전송) |
+| 출력 | OCR 텍스트 → LangChain + ChatUpstage LLM → 구조화 JSON |
+| 오케스트레이션 | langchain-upstage ChatUpstage + PromptTemplate + JsonOutputParser |
 
 **추출 필드**:
 
@@ -798,9 +799,11 @@ module.exports = {
 | 스타일링 | TailwindCSS | v3+ |
 | HTTP 클라이언트 | Axios | v1+ |
 | 백엔드 | Python FastAPI | v0.111+ |
-| LLM 오케스트레이션 | LangChain | v0.2+ |
-| OCR LLM | Upstage document-digitization-vision | - |
-| 이미지 처리 | Pillow / pdf2image | - |
+| LLM 오케스트레이션 | LangChain | v1.2.17 |
+| LLM 코어 | langchain-core | v1.3.3 |
+| OCR 통합 | langchain-upstage | v0.7.7 |
+| OCR API | Upstage Document Digitization (`/v1/document-digitization`) | model=ocr |
+| 이미지 처리 | Pillow / pdf2image | Pillow>=10.4.0 |
 | 데이터 저장 | JSON 파일 | DB 미사용 |
 | 배포 | Vercel | - |
 | 버전 관리 | GitHub | main 브랜치 |
@@ -978,17 +981,24 @@ receipt-tracker/
 fastapi==0.111.0
 uvicorn[standard]==0.29.0
 python-multipart==0.0.9
-langchain==0.2.0
-langchain-upstage==0.1.0
-pillow==10.3.0
+langchain==1.2.17
+langchain-core==1.3.3
+langchain-upstage==0.7.7
+pillow>=10.4.0
 pdf2image==1.17.0
 python-dotenv==1.0.1
 ```
 
+> **버전 변경 이유 (Python 3.13 호환성)**
+> - `langchain 0.2.x`는 `numpy<2` 의존성으로 Python 3.13 binary wheel 미지원 → v1.2.17로 업그레이드
+> - `langchain-upstage 0.1.x` → v0.7.7 (최신, langchain 1.x 호환)
+> - `pillow 10.3.0`은 Python 3.13 소스 빌드 실패 → `>=10.4.0`으로 완화
+> - Upstage OCR API 엔드포인트: `POST /v1/document-digitization` + `model="ocr"` (최신 방식)
+
 #### 완료 기준
-- [ ] `uvicorn backend.main:app --reload` 실행 시 FastAPI 서버가 정상 기동된다
-- [ ] `http://localhost:8000/docs` Swagger UI가 열린다
-- [ ] `.env` 파일이 `.gitignore`에 포함되어 있다
+- [x] `uvicorn backend.main:app --reload` 실행 시 FastAPI 서버가 정상 기동된다
+- [x] `http://localhost:8000/docs` Swagger UI가 열린다
+- [x] `.env` 파일이 `.gitignore`에 포함되어 있다
 
 ---
 

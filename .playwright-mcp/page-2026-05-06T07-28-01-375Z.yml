@@ -1,0 +1,146 @@
+- generic [ref=e3]:
+  - generic:
+    - img
+  - generic [ref=e4]:
+    - generic [ref=e8]:
+      - heading "Receipt Expense Tracker API 1.0.0 OAS 3.1" [level=2] [ref=e9]:
+        - text: Receipt Expense Tracker API
+        - generic [ref=e10]:
+          - generic [ref=e12]: 1.0.0
+          - generic [ref=e14]: OAS 3.1
+      - link "/openapi.json" [ref=e15] [cursor=pointer]:
+        - /url: /openapi.json
+        - generic [ref=e16]: /openapi.json
+    - generic [ref=e21]:
+      - heading "default Collapse operation" [level=3] [ref=e22] [cursor=pointer]:
+        - link "default" [ref=e23]:
+          - /url: "#/default"
+        - button "Collapse operation" [expanded] [ref=e24]:
+          - img [ref=e25]
+      - generic [ref=e28]:
+        - generic [ref=e30]:
+          - generic [ref=e31] [cursor=pointer]:
+            - button "get /" [expanded] [active] [ref=e32]:
+              - generic [ref=e33]: GET
+              - link / [ref=e35]:
+                - /url: "#/default/root__get"
+              - generic [ref=e36]: Root
+            - generic "Copy to clipboard" [ref=e148]:
+              - img [ref=e149]
+            - button "get /" [expanded] [ref=e39]:
+              - img [ref=e150]
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - heading "Parameters" [level=4] [ref=e158] [cursor=pointer]
+                - button "Try it out" [ref=e160] [cursor=pointer]
+              - paragraph [ref=e163]: No parameters
+            - generic [ref=e165]:
+              - heading "Responses" [level=4] [ref=e167]
+              - region [ref=e169]:
+                - rowgroup [ref=e170]:
+                  - row "Code Description Links" [ref=e171]:
+                    - cell "Code" [ref=e172]
+                    - cell "Description" [ref=e173]
+                    - cell "Links" [ref=e174]
+                - rowgroup [ref=e175]:
+                  - row "200 Successful Response Media type application/json Controls Accept header. Example Value No links" [ref=e176]:
+                    - cell "200" [ref=e177]
+                    - cell "Successful Response Media type application/json Controls Accept header. Example Value" [ref=e178]:
+                      - paragraph [ref=e181]: Successful Response
+                      - generic [ref=e183]:
+                        - generic [ref=e184]: Media type
+                        - combobox "Media Type" [ref=e186]:
+                          - option "application/json" [selected]
+                        - generic [ref=e187]:
+                          - text: Controls
+                          - code [ref=e188]: Accept
+                          - text: header.
+                      - generic [ref=e189]:
+                        - tablist [ref=e190]:
+                          - tab "Example Value" [selected] [ref=e191] [cursor=pointer]
+                          - tab "Schema" [ref=e192] [cursor=pointer]
+                        - tabpanel "Example Value" [ref=e193]:
+                          - code [ref=e197]: "\"string\""
+                    - cell "No links" [ref=e198]
+        - generic [ref=e43]:
+          - generic [ref=e44] [cursor=pointer]:
+            - button "get /health" [expanded] [ref=e45]:
+              - generic [ref=e46]: GET
+              - link "/health" [ref=e48]:
+                - /url: "#/default/health_health_get"
+              - generic [ref=e49]: Health
+            - generic "Copy to clipboard"
+            - button "get /health" [expanded] [ref=e52]:
+              - img [ref=e57]
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e62]:
+                - heading "Parameters" [level=4] [ref=e65] [cursor=pointer]
+                - button "Cancel" [ref=e106] [cursor=pointer]
+              - paragraph [ref=e70]: No parameters
+            - generic [ref=e71]:
+              - button "Execute" [ref=e107] [cursor=pointer]
+              - button "Clear" [ref=e108] [cursor=pointer]
+            - generic [ref=e72]:
+              - heading "Responses" [level=4] [ref=e74]
+              - generic [ref=e75]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]:
+                    - generic [ref=e111]:
+                      - heading "Curl" [level=4] [ref=e112]
+                      - button [ref=e114] [cursor=pointer]
+                      - code [ref=e117]: "curl -X 'GET' \\ 'http://localhost:8000/health' \\ -H 'accept: application/json'"
+                    - generic [ref=e119]:
+                      - heading "Request URL" [level=4] [ref=e120]
+                      - generic [ref=e121]: http://localhost:8000/health
+                    - heading "Server response" [level=4] [ref=e122]
+                    - table [ref=e123]:
+                      - rowgroup [ref=e124]:
+                        - row "Code Details" [ref=e125]:
+                          - cell "Code" [ref=e126]
+                          - cell "Details" [ref=e127]
+                      - rowgroup [ref=e128]:
+                        - 'row "200 Response body Download { \"status\": \"ok\" } Response headers content-length: 15 content-type: application/json date: Wed,06 May 2026 07:27:26 GMT server: uvicorn" [ref=e129]':
+                          - cell "200" [ref=e130]
+                          - 'cell "Response body Download { \"status\": \"ok\" } Response headers content-length: 15 content-type: application/json date: Wed,06 May 2026 07:27:26 GMT server: uvicorn" [ref=e131]':
+                            - generic [ref=e132]:
+                              - heading "Response body" [level=5] [ref=e133]
+                              - generic [ref=e134]:
+                                - button [ref=e136] [cursor=pointer]
+                                - button "Download" [ref=e137] [cursor=pointer]
+                                - code [ref=e139]: "{ \"status\": \"ok\" }"
+                            - generic [ref=e140]:
+                              - heading "Response headers" [level=5] [ref=e141]
+                              - generic [ref=e142]:
+                                - generic [ref=e143]: "content-length: 15"
+                                - generic [ref=e144]: "content-type: application/json"
+                                - generic [ref=e145]: "date: Wed,06 May 2026 07:27:26 GMT"
+                                - generic [ref=e146]: "server: uvicorn"
+                  - heading "Responses" [level=4] [ref=e147]
+                - region [ref=e76]:
+                  - rowgroup [ref=e77]:
+                    - row "Code Description Links" [ref=e78]:
+                      - cell "Code" [ref=e79]
+                      - cell "Description" [ref=e80]
+                      - cell "Links" [ref=e81]
+                  - rowgroup [ref=e82]:
+                    - row "200 Successful Response Media type application/json Controls Accept header. Example Value No links" [ref=e83]:
+                      - cell "200" [ref=e84]
+                      - cell "Successful Response Media type application/json Controls Accept header. Example Value" [ref=e85]:
+                        - paragraph [ref=e88]: Successful Response
+                        - generic [ref=e90]:
+                          - generic [ref=e91]: Media type
+                          - combobox "Media Type" [ref=e93]:
+                            - option "application/json" [selected]
+                          - generic [ref=e94]:
+                            - text: Controls
+                            - code [ref=e95]: Accept
+                            - text: header.
+                        - generic [ref=e96]:
+                          - tablist [ref=e97]:
+                            - tab "Example Value" [selected] [ref=e98] [cursor=pointer]
+                            - tab "Schema" [ref=e99] [cursor=pointer]
+                          - tabpanel "Example Value" [ref=e100]:
+                            - code [ref=e104]: "\"string\""
+                      - cell "No links" [ref=e105]

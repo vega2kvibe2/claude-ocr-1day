@@ -137,3 +137,6 @@ receipt-tracker/
 | PDF 변환 실패 | Poppler 설치 여부 / Vercel에서 `/tmp` 경로 사용 여부 |
 | Vercel 데이터 손실 | `VERCEL=1` 환경변수 감지 여부 / localStorage 병행 저장 동작 여부 |
 | 환경변수 미적용 | `VITE_` 접두사 확인 / Vercel 환경변수 등록 여부 / 변경 후 재배포 여부 |
+
+### Git Push 작업은 반드시 확인을 받은 이후에 처리하세요.
+### Source Code가 변경되거나 라이브러리 버전이 변경되면 반드시 @PRD_영수증_지출관리앱.md 같이 업데이트 하고, 완료 기준의 Check Box에 완료된 사항들도 모두 체크표시 하세요.
